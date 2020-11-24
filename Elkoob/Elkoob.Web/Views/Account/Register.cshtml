@@ -3,78 +3,86 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Register</div>
-                <div class="card-body">
-
-                    <form asp-controller="Account" asp-action="Register" method="post" class="form-horizontal">
-
-                        <div class="form-group">
-                            <label asp-for="UserName" class="cols-sm-2 control-label"></label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input asp-for="UserName" class="form-control" id="name" placeholder="Enter your Name" />
-                                </div>
-                            </div>
-                            <span asp-validation-for="UserName" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Email" class="cols-sm-2 control-label"></label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input asp-for="Email" class="form-control" id="email" placeholder="Enter your Email" />
-                                </div>
-                            </div>
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Phone" class="cols-sm-2 control-label"></label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input asp-for="Phone" class="form-control" id="email" placeholder="Enter your Phone Number" />
-                                </div>
-                            </div>
-                            <span asp-validation-for="Phone" class="text-danger"></span>
-                        </div>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
 
 
-                        <div class="form-group">
-                            <label asp-for="Password" class="cols-sm-2 control-label"></label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input asp-for="Password" class="form-control" id="password" placeholder="Enter your Password" />
-                                </div>
-                            </div>
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
+            <span class="text-center login100-form-title display-4">
+                ثبت نام
+            </span>
 
-                        <div class="form-group">
-                            <label asp-for="Password" class="cols-sm-2 control-label">Confirm Password</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input asp-for="RePassword" class="form-control" id="confirm" placeholder="Confirm your Password" />
-                                </div>
-                            </div>
-                            <span asp-validation-for="RePassword" class="text-danger"></span>
-                        </div>
 
-                        <div class="form-group ">
-                            <button type="submit" class="btn btn-success btn-lg btn-block login-button">Register</button>
-                        </div>
+            <form asp-controller="Account" asp-action="Register" method="post" class="login100-form validate-form">
+                <div asp-validation-summary="ModelOnly"></div>
 
-                    </form>
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="UserName" class="input100" placeholder="نام کاربری">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                    </span>
+
                 </div>
+                <span asp-validation-for="UserName" class="text-danger"></span>
 
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Phone" class="input100" placeholder="شماره تلفن">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
+                        </svg>
+                    </span>
+                </div>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Email" class="input100" placeholder="ایمیل">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                        </svg>
+                    </span>
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Password" class="input100" placeholder="رمز عبور">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                        </svg>
+                    </span>
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="RePassword" class="input100" placeholder="تکرار رمز عبور">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                        </svg>
+                    </span>
+                </div>
+                <span asp-validation-for="RePassword" class="text-danger"></span>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        ثبت نام
+                    </button>
+                </div>
+            </form>
+            <div class="login100-pic js-tilt" data-tilt="" style="will-change: trtransform;
+                                      transform: perspective(300px) rotateX(0deg) rotateY(0deg);">
+                <img src="~/Images/img-01.png" />
             </div>
         </div>
     </div>

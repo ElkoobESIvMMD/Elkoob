@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Elkoob.Application.Common.Interfaces;
+using Elkoob.Domain.Interfaces;
 using Elkoob.Infrastructure.Data;
+using Elkoob.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -41,6 +43,8 @@ namespace Elkoob.Infrastructure
 
             services.AddScoped<IApplicationDbContext>(
                 provider => provider.GetService<ApplicationDbContext>());
+
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             #endregion
 

@@ -13,18 +13,22 @@ namespace Elkoob.Application.Common.ViewModels.Identity
             AdditionalFields = "__RequestVerificationToken")]
         public string UserName { get; set; }
 
+
         [Required(ErrorMessage = "لطفا ایمیل خود را وارد کنید")]
         [DataType(DataType.EmailAddress)]
         [Remote("IsEmailInUse", "Account", HttpMethod = "POST",
             AdditionalFields = "__RequestVerificationToken")]
         public string Email { get; set; }
 
+
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+
 
         [Required(ErrorMessage = "لطفا رمز عبور خود را وارد کنید")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
 
         [Required(ErrorMessage = "لطفا تکرار رمز عبور خود را وارد کنید")]
         [Compare(nameof(Password))]

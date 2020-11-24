@@ -11,6 +11,11 @@ namespace Elkoob.Infrastructure.Data
 {
     public class ApplicationDbContext : IdentityDbContext,IApplicationDbContext
     {
+        public ApplicationDbContext()
+        {
+
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

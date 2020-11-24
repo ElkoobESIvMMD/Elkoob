@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Elkoob.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Elkoob.Web.Models;
@@ -11,6 +12,8 @@ namespace Elkoob.Web.Controllers
 {
     public class HomeController : Controller
     {
+        UnitOfWork db = new UnitOfWork();
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -20,7 +23,8 @@ namespace Elkoob.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var product = db.ProductRepository.GetAllProducts();
+            return View(product);
         }
 
         public IActionResult Privacy()
